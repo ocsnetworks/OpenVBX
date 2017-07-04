@@ -341,7 +341,7 @@ $config['encryption_key'] = "";
 | 'time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'openvbx_session';
+$config['sess_cookie_name']		= 'openvbxsession';
 $config['sess_expiration']		= 7200;
 $config['sess_encrypt_cookie']	= FALSE;
 $config['sess_use_database']	= FALSE;
@@ -359,7 +359,7 @@ $config['sess_time_to_update'] 	= 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
-$config['cookie_prefix']	= "";
+$config['cookie_prefix']	= "openvbx";
 $config['cookie_domain']	= parse_url($config['base_url'], PHP_URL_HOST);
 $config['cookie_path']		= WEB_ROOT;
 if(empty($config['cookie_path']))
