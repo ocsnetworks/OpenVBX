@@ -98,9 +98,6 @@
 <form id="dialog-password" style="display: none;" class="dialog vbx-form" action="<?php echo site_url('account/password/'.$user->id); ?>" method="post" title="Change Password">
 	<div class="hide error-message"></div>
 	<fieldset class="vbx-input-container">
-		<label class="field-label">Old Password
-			<input type="password" class="medium" name="old_pw" />
-		</label>
 		<label class="field-label">New Password
 			<input type="password" class="medium" name="new_pw1" />
 		</label>
