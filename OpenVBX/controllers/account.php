@@ -232,27 +232,18 @@ class Account extends User_Controller {
 		
 		$user = VBX_user::get(array('id' => $user_id));
 
-		$old_pw = $this->input->post('old_pw');
 		$new_pw = $this->input->post('new_pw1');
 		$new_pw2 = $this->input->post('new_pw2');
 		$this->data['error'] = false;
 		$message = '';
 
-		if (VBX_User::authenticate($user, $old_pw))
-		{
-			try {
-				$user->set_password($new_pw, $new_pw2);
-				$message = 'Password Updated';
-			}
-			catch (Exception $e) {
-				$this->data['error'] = true;
-				$message = $e->getMessage();
-			}
+		try {
+			$user->set_password($new_pw, $new_pw2);
+			$message = 'Password Updated';
 		}
-		else
-		{
+		catch (Exception $e) {
 			$this->data['error'] = true;
-			$message = 'Incorrect Password';
+			$message = $e->getMessage();
 		}
 		
 		if ($user_id == $this->session->userdata('user_id'))
